@@ -8,7 +8,15 @@ private:
     int a = 0;
     int b = 0;
 public:
-    auto operator<=>(const Test &) const = default;
+    auto operator<=>(const Test &that_) const {
+        if (auto cmp = this->a <=> that_.a; cmp != 0) {
+            return cmp;
+        }
+        if (auto cmp = this->b <=> that_.b; cmp != 0) {
+            return cmp;
+        }
+        return std::strong_ordering::equal;
+    }
 };
 
 int main()
