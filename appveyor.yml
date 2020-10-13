@@ -1,0 +1,10 @@
+
+version: 1.0.0-build.{build}
+
+image:
+  # - Visual Studio 2019
+  - macOS
+platform:
+  - x64
+build_script:
+  - ps: ./CI/AppveyorBuild.ps1
