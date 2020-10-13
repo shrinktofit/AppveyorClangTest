@@ -1,4 +1,6 @@
 
+clang -v
+
 $cmakeInstallPrefix = "out/install"
 
 foreach ($cmakeBuildType in @("Debug")) {
